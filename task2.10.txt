@@ -1,0 +1,36 @@
+Task 2.10: Final Report on Optimization Method Comparisons
+
+Introduction
+This project aimed to explore and compare different optimization methods—Gradient Descent, Gradient Descent with Momentum, Newton’s Method, and Adam Optimization—on a variety of functions and datasets. By implementing these methods and analyzing their performance across synthetic and real-world data, we sought to understand the strengths and limitations of each approach, ultimately providing recommendations for practical use.
+
+Methods Summary
+
+Gradient Descent: A basic optimization technique that updates parameters in the opposite direction of the gradient. While effective, its performance highly depends on the choice of step size.
+Gradient Descent with Momentum: Introduces a momentum term to the parameter updates, helping the method converge faster and handle complex landscapes.
+Newton’s Method: Uses the second derivative (Hessian) to achieve quadratic convergence near the optimum. Though powerful, it’s computationally expensive due to the Hessian calculation.
+Adam Optimization: An adaptive learning rate method that adjusts the learning rate for each parameter, balancing the benefits of momentum and adaptive step sizes. Commonly used in deep learning applications.
+Comparative Analysis
+The experiments highlighted distinct performance characteristics of each method:
+
+Gradient Descent: Converged consistently across tasks but required careful tuning of the step size. Its convergence was slower than Newton's Method and Adam but stable when using a small, carefully selected step size.
+Gradient Descent with Momentum: Showed improved convergence speed over standard Gradient Descent, particularly on non-quadratic functions. The momentum term helped it avoid oscillations and navigate complex landscapes more effectively.
+Newton’s Method: Demonstrated the fastest convergence, especially on well-conditioned functions, due to its quadratic convergence properties. However, it was computationally prohibitive for large datasets and occasionally encountered singular Hessians.
+Adam Optimization: Combined the benefits of momentum and adaptive learning rates, making it robust and efficient for large, complex datasets. Its adaptability reduced the need for extensive hyperparameter tuning.
+Real-World Applications
+Based on the experiments, we recommend the following applications for each method:
+
+Gradient Descent: Suitable for high-dimensional, large-scale datasets where computational simplicity is needed. Effective for general-purpose optimization, given a well-tuned step size.
+Gradient Descent with Momentum: Ideal for problems with non-convex landscapes, such as those encountered in machine learning, where faster convergence than standard Gradient Descent is desired.
+Newton’s Method: Best suited for low-dimensional, well-conditioned problems where the Hessian is computationally feasible, such as quadratic programming tasks.
+Adam Optimization: Recommended for deep learning and other applications requiring adaptive learning rates. Its robustness to noisy gradients and reduced need for hyperparameter tuning make it widely applicable.
+Practical Recommendations
+
+For large datasets, we recommend Gradient Descent or Adam Optimization due to their scalability.
+When dealing with functions with complex landscapes, Gradient Descent with Momentum provides a good balance of stability and speed.
+Newton’s Method is highly efficient for well-conditioned problems but is computationally intensive and less suitable for high-dimensional data.
+Adam’s adaptability makes it a versatile choice, particularly when minimal tuning is preferred.
+Limitations and Future Work
+Some limitations encountered include the computational cost of Newton’s Method and the sensitivity of Gradient Descent to step size. Future work could involve testing these methods on additional non-convex functions, exploring hybrid methods that combine techniques, or experimenting with adaptive learning rate schedules to enhance stability and convergence.
+
+Conclusion
+In conclusion, each optimization method offers unique advantages depending on the problem characteristics. The project’s experiments provide a foundation for selecting suitable methods based on problem dimensionality, landscape complexity, and computational resources. Future advancements could further enhance these methods, making them even more adaptable for complex, real-world applications.
